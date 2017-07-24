@@ -22,11 +22,29 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
+
+
+
+
+        // TODO Use synthetic import by commenting out below
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -53,6 +71,40 @@ class MainActivity : AppCompatActivity() {
                 .setPositiveButton("Click me", object : DialogInterface.OnClickListener {
 
                 }).create()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Extension function usages
+
+        // Show toast
+        showToast("Working with Kotlin is fun")
+
+        fab.gone()
+
+
+
+
 
     }
 

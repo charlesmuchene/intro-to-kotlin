@@ -132,7 +132,7 @@ fun main(args: Array<String>) {
     // TODO Make it nullable
     var code: String = "Not null"
 
-
+    // Generally avoid nulls unless when interoperating with Java.
 
 
 
@@ -701,8 +701,106 @@ fun Context.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 
 
 
+// Utils functions
+val cities = listOf("Kampala, Nairobi, Accra")
 
 
+val citiesMap = mapOf(
+        "Kampala" to "Uganda",
+        "Nairobi" to "Kenya",
+        "Accra" to "Ghana"
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Custom implementation
+infix fun String.loves(another: String) = "$this loves $another"
+
+
+val exampleString = "Charles" loves "Kotlin" // "Charles loves Kotlin"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+val anotherExample = "Android" loves "Kotlin" loves "Unix" loves "CLI" loves "Git"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO Show mutability and some utility functions
+var listing = mutableListOf(3, 5, 6, 9, 2)
+
+fun exampleUsage() {
+
+    listing.add(8)
+
+    listing = listing.map {
+        it.squared()
+    }.toMutableList()
+
+    // 9, 25, 36, 81, 4, 64
+
+    val anotherListing = 5..20
+
+    val sum = anotherListing.reduce { accumulated, current -> accumulated + current }
+
+    // TODO You can use in-built sum function for the above.
+}
+
+
+
+
+
+// Extras
+// 1. Lambdas
+// 2. Higher Order Functions
 
 
 
