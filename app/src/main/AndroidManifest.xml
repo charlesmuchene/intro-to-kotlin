@@ -19,6 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false">
+        </service>
+
+        <activity
+            android:name=".JavaActivity"
+            android:label="@string/title_activity_java"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
