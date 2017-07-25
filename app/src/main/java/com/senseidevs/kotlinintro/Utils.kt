@@ -340,6 +340,20 @@ fun sum(x: Float, y: Float): Float {
 
 
 
+// Using if as an expression
+fun min(a: Int, b: Int) = if (a < b) a else b
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -482,7 +496,14 @@ class Laptop constructor(os: String) {
 abstract class Animal
 
 
-class Dog : Animal()
+class Dog : Animal() {
+
+    var name: String = "Simba"
+        get() = field.toLowerCase()
+        set(value) {
+            field = "My dog is called $value"
+        }
+}
 
 
 
@@ -604,6 +625,9 @@ object OnlyOneInstance
 
 
 // Extension Functions
+
+
+
 // TODO Convert to single expression function
 fun Int.squared(): Int {
     return this * this
@@ -701,6 +725,13 @@ fun Context.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 
 
 
+
+
+
+
+
+
+
 // Utils functions
 val cities = listOf("Kampala, Nairobi, Accra")
 
@@ -752,9 +783,10 @@ val exampleString = "Charles" loves "Kotlin" // "Charles loves Kotlin"
 
 
 
+infix fun String.and(another: String) = "$this and $another"
+infix fun String.`in`(integer: Int) = "$this in $integer"
 
-
-val anotherExample = "Android" loves "Kotlin" loves "Unix" loves "CLI" loves "Git"
+val anotherExample = "Charles" loves "Kotlin" loves "CLI" loves "Git" `in` 2017
 
 
 
@@ -798,9 +830,22 @@ fun exampleUsage() {
 
 
 
-// Extras
+
+
+
+
+
+
+
+
+
+
+// Some more
 // 1. Lambdas
-// 2. Higher Order Functions
+// 2. Coroutines
+// 2. Operator overloading
+// 3. Higher Order Functions
+// 4. Collections: Aggregate, Mapping, Filtering etc
 
 
 

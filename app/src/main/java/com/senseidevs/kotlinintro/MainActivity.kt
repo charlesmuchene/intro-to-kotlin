@@ -1,12 +1,15 @@
 package com.senseidevs.kotlinintro
 
+import android.content.BroadcastReceiver
 import android.content.DialogInterface
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -142,4 +145,80 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
+
+    // Initialized elsewhere -- useful for dependency injection
+    lateinit var homeView: View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Lazy properties computed upon first access only
+    val alertDialog: AlertDialog by lazy {
+
+        AlertDialog.Builder(this).apply {
+
+            setTitle("Kotlin is Awesome")
+            setMessage("You love it before you start using it")
+            setPositiveButton(android.R.string.ok, null)
+
+        }.create()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var numberOfPeople: Int by Delegates.notNull<Int>()
+
+
+    // Standard Delegates
+    // Lazy, Observable, Vetoable
 }
